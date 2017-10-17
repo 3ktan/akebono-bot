@@ -1,0 +1,6 @@
+akebono.help
+akebono.user
+akebono.pso2
+akebono.meme
+akebono.admiral
+akebono.admin.take_data
