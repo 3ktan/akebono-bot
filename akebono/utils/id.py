@@ -1,3 +1,3 @@
-admin_id = your_id
+admin_id = 270757591418667010
 
-sever_test_id = testserver_id
+sever_test_id = 323727595914919957
