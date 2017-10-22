@@ -8,6 +8,7 @@ class admiral:
         self.bot = bot
 
 ########################## FUNCTIONS ##########################
+    #reload one extension
     def reload_extension(self, extension):
         try:
             self.bot.unload_extension(extension)
@@ -16,6 +17,7 @@ class admiral:
         except Exception as e:
             print("Failed reloading {}: {}".format(extension, e))
 
+    # reload all extension
     def reload_all_extensions(self):
         with open("extensions.txt") as file:
             extensions = [e for e in file.read().splitlines() if e]
@@ -29,26 +31,29 @@ class admiral:
                 print("Failed reloading {}: {}".format(extension, e))
 
 ########################## ADMIN COMMANDS ##########################
+    #reload extension(s)
     @commands.command()
     @check.is_owner()
     async def rl(self, ctx, extension: str = ""):
         print("Reloading module(s)...Please wait")
-        await ctx.send("Reloading module(s)...Please wait")
         if extension != "":
+            await ctx.send("Reloading `"+ extension + "`...Please wait")
             extension = "akebono." + extension
             self.reload_extension(extension)
         else:
+            await ctx.send("Reloading `all` extensions...Please wait")
             self.reload_all_extensions()
         print("All Done.")
         print("----------------------------")
         await ctx.send("Done")
 
+    #change status
     @commands.command()
     @check.is_owner()
     async def status(self, ctx, *, stuff):
         await self.bot.change_presence(game=discord.Game(name=stuff))
 
-
+    #logout! Bye bye
     @commands.command()
     @check.is_owner()
     async def logout(self, ctx):

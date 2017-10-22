@@ -28,7 +28,6 @@ token = loadid['token']
 prefix = loadid['prefix']
 bot = commands.Bot(command_prefix=when_mentioned_or(prefix), description=description)
 
-
 @bot.event
 async def on_ready():
     print("Logged in....")
@@ -41,7 +40,7 @@ async def on_ready():
     load_extensions()
     print("------------Loaded------------")
     await asyncio.sleep(5)
-    await bot.change_presence(game=discord.Game(name='Shitty Admiral!!!'))
+    await bot.change_presence(game=discord.Game(name='with 3ktan'))
 
 
 bot.run(token)

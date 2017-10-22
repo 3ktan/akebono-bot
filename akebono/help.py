@@ -16,9 +16,10 @@ class Help_module:
                 description="Description: Phantasy Star Online 2 & Kantai Collection (kancolle)")
             embed.add_field(
                 name="Standard Commands List ",
-                value="`//inv`: Invite bot to your server"
+                value="`//inv`: Invite bot to your server\n"
                       "`//about:` description about Bot & Athor\n"
                       "`//help user:` Get information about a user \n"
+                      "`//help server:` Get information about a server \n"
                       "`//help meme`: List meme\n"
                       "`//help pso2`: Phantasy Star Online 2")
             await ctx.send(embed=embed)
@@ -102,6 +103,20 @@ class Help_module:
                   "`//salt`: want some salt\n"
         )
         await ctx.send(embed=embed)
+
+    @help.command()
+    async def server(self, ctx):
+        embed = discord.Embed(
+            title="//server",
+            colour=discord.Colour.teal(),
+            description="")
+        embed.add_field(
+            name="List commands",
+            value="`//server`: about server\n"
+                  "`//servericon`: server's icon\n"
+        )
+        await ctx.send(embed=embed)
+
 
 def setup(bot):
     bot.add_cog(Help_module(bot))

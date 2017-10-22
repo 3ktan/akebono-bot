@@ -73,5 +73,7 @@ class Userinfo:
         em.set_image(url=avi)
         await ctx.send(embed=em)
 
+
+
 def setup(bot):
     bot.add_cog(Userinfo(bot))
