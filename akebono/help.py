@@ -21,7 +21,8 @@ class Help_module:
                       "`//help user:` Get information about a user \n"
                       "`//help server:` Get information about a server \n"
                       "`//help meme`: List meme\n"
-                      "`//help pso2`: Phantasy Star Online 2")
+                      "`//help pso2`: Phantasy Star Online 2\n"
+                      "`//help other`: some stupid things \n")
             await ctx.send(embed=embed)
 
 
@@ -41,7 +42,7 @@ class Help_module:
         embed = discord.Embed(
             title=self.bot.user.name,
             colour=discord.Colour.teal(),
-            description="Description: Phantasy Star Online 2 & Kantai Collection (kancolle)\n"
+            description="About bot: Phantasy Star Online 2 & Kantai Collection (kancolle)\n"
                         "Support: https://discord.gg/86SXwYJ \n"
                         "Invite bot to your server: https://goo.gl/mnZcsw"
         )
@@ -94,13 +95,13 @@ class Help_module:
             name="Meme list",
             value="`//bad`: \n"
                   "`//fack`: \n"
-                  "`//haha`: \n"
+                  "`//haha`: Lol \n"
                   "`//smug`: \n"
                   "`//teehee`: \n"
-                  "`//waa`: \n"
-                  "`//wat` \n"
-                  "`//police`: Hello onni-chan. \n"
-                  "`//salt`: want some salt\n"
+                  "`//waa`: Wanna cry?\n"
+                  "`//wat`: Nani the facka? \n"
+                  "`//police`: Hello onii-chan, FBI waiting for you \n"
+                  "`//salt`: Want some salt?\n"
         )
         await ctx.send(embed=embed)
 
@@ -117,6 +118,17 @@ class Help_module:
         )
         await ctx.send(embed=embed)
 
-
+    @help.command()
+    async def other(self, ctx):
+        embed = discord.Embed(
+            title="//help other",
+            colour=discord.Colour.teal(),
+            description="")
+        embed.add_field(
+            name="Some stupid things",
+            value="`//textflip`: Flipping some text, applies only to letters in alphabet (A-Z, a-z) and numbers (0-9)\n"
+                  "`//`: \n"
+        )
+        await ctx.send(embed=embed)
 def setup(bot):
     bot.add_cog(Help_module(bot))

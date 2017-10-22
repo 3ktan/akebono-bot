@@ -5,3 +5,4 @@ akebono.meme
 akebono.admiral
 akebono.server
 akebono.utils.take_data
+akebono.test
