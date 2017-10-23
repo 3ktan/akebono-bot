@@ -4,5 +4,6 @@ akebono.pso2
 akebono.meme
 akebono.admiral
 akebono.server
+akebono.translate
 akebono.utils.take_data
 akebono.test

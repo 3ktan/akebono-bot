@@ -22,7 +22,8 @@ class Help_module:
                       "`//help server:` Get information about a server \n"
                       "`//help meme`: List meme\n"
                       "`//help pso2`: Phantasy Star Online 2\n"
-                      "`//help other`: some stupid things \n")
+                      "`//help other`: some stupid things \n"
+                      "`//help translate`: Translation to multiple languages \n")
             await ctx.send(embed=embed)
 
 
@@ -61,7 +62,7 @@ class Help_module:
     @help.command()
     async def user(self, ctx):
         embed = discord.Embed(
-            title="//user",
+            title="//help user",
             colour=discord.Colour.teal(),
             description="Infomations about user in the server")
         embed.add_field(
@@ -75,7 +76,7 @@ class Help_module:
     @help.command()
     async def pso2(self, ctx):
         embed = discord.Embed(
-            title="//pso2",
+            title="//help pso2",
             colour=discord.Colour.teal(),
             description="Phantasy Star Online 2 ")
         embed.set_thumbnail(url="http://ww3.sinaimg.cn/crop.0.0.600.337.1000.562/4e4baa2egw1f6i46t0n7oj20go0a940q.jpg")
@@ -88,7 +89,7 @@ class Help_module:
     @help.command()
     async def meme(self, ctx):
         embed = discord.Embed(
-            title="//meme",
+            title="//help meme",
             colour=discord.Colour.teal(),
             description="")
         embed.add_field(
@@ -108,7 +109,7 @@ class Help_module:
     @help.command()
     async def server(self, ctx):
         embed = discord.Embed(
-            title="//server",
+            title="//help server",
             colour=discord.Colour.teal(),
             description="")
         embed.add_field(
@@ -128,6 +129,19 @@ class Help_module:
             name="Some stupid things",
             value="`//textflip`: Flipping some text, applies only to letters in alphabet (A-Z, a-z) and numbers (0-9)\n"
                   "`//`: \n"
+        )
+        await ctx.send(embed=embed)
+
+    @help.command()
+    async def translate(self, ctx):
+        embed = discord.Embed(
+            title="//help translate",
+            colour=discord.Colour.teal(),
+            description="")
+        embed.add_field(
+            name="Translation",
+            value="`//translate <language> <text>:` Translation to multiple languages - eg: `//translate japanese cute!!` \n"
+                  "`//trans`: translation to english - eg: `//trans 特型駆逐艦「曙」よ` \n"
         )
         await ctx.send(embed=embed)
 def setup(bot):
