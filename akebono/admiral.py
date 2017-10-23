@@ -2,10 +2,12 @@ import discord
 from discord.ext import commands
 import random
 from .utils import check
+import aiohttp
 
 class admiral:
     def __init__(self,bot):
         self.bot = bot
+        self.session = aiohttp.ClientSession(loop=self.bot.loop, headers={"User-Agent": "AppuSelfBot"})
 
 ########################## FUNCTIONS ##########################
     #reload one extension
@@ -35,6 +37,7 @@ class admiral:
     @commands.command()
     @check.is_owner()
     async def rl(self, ctx, extension: str = ""):
+        self.session.close()
         print("Reloading module(s)...Please wait")
         if extension != "":
             await ctx.send("Reloading `"+ extension + "`...Please wait")
@@ -54,26 +57,12 @@ class admiral:
         await self.bot.change_presence(game=discord.Game(name=stuff))
 
     #logout! Bye bye
-    @commands.command()
+    @commands.group(aliases=["out" ])
     @check.is_owner()
     async def logout(self, ctx):
         print("Thanks for the hard work!")
         await ctx.send("Thanks for the hard work!")
         await self.bot.logout()
-######################### OTHER ############################3
-    @commands.command()
-    @check.is_owner()
-    async def poke(self, ctx):
-        x = random.choice(["Why are you touching me? So annoying",
-                           "What? What is it?",
-                           "Why are you touching me? You don't stand a chance.",
-                           "If you don't like me, why don't you remove me from the fleet?",
-                           "Really, being alone makes me feel relieved. I like being alone better... Yep.",
-                           "Seriously, this is no joke.",
-                           "If you don't like me, why don't you remove me from the fleet? ... It's not like it b-bothers me.",
-                           "How many times, do I have to say before you understand!? What I hate the most is the shitty Admiral!! ...Why won't you believe what I said?",
-                           ])
-        await ctx.send(x)
 
 
 def setup(bot):
