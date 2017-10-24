@@ -5,7 +5,9 @@ from discord.ext import commands
 class Pso2:
     def __init__(self, bot):
         self.bot = bot
-
+    '''
+    Phantasy Star Online 2: http://pso2.jp/players/
+    '''
     @commands.group()
     async def pso2(self, ctx):
         if ctx.invoked_subcommand is None:

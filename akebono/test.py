@@ -1,34 +1,21 @@
 import discord
 from discord.ext import commands
-from bs4 import BeautifulSoup as BS
-import urllib.request as rq
+from bs4 import BeautifulSoup
 import codecs
-import re
 import json
-import os
-import asyncio
+import aiohttp
+import lxml
+import io
 
 class test:
-    def __init__(self, bot):
-        self.bot = bot
-
     '''
     Test something here before using
     '''
 
-    @commands.command()
-    async def pm(self, user_id: str, *, content: str):
-        user = await self.bot.get_user_info(user_id)
+    def __init__(self, bot):
+        self.bot = bot
 
-        fmt = content + '\n\n*This is a DM sent because you had previously requested feedback or I found a bug' \
-                        ' in a command you used, I do not monitor this DM.*'
 
-        try:
-            await self.bot.send_message(user, fmt)
-        except:
-            await self.bot.say('Could not PM user by ID ' + user_id)
-        else:
-            await self.bot.say('PM successfully sent.')
 
     @commands.command()
     async def seach(self, ctx, *, name: str):

@@ -60,14 +60,7 @@ class Server_module:
         embed.set_image(url=ctx.guild.icon_url_as(format='png'))
         await ctx.send(embed=embed)
 
-    @commands.command()
-    async def kick(self, ctx, user: discord.User, *, reason=None):
-        try:
-            await user.kick(reason=reason)
-            await ctx.send("{user.name} has been kicked.")
-            await user.send(f"You have been kicked from {ctx.guild.name} by {ctx.author.name}.\nReason: {reason}")
-        except:
-            await ctx.deny()
+
 
 def setup(bot):
     bot.add_cog(Server_module(bot))
