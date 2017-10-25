@@ -131,6 +131,7 @@ class Help_module:
                   "`//poke`: poke bot _(:3 \n"
                   "`//countdown`: eg: //countdown 5 \n"
                   "`//ping`: pong\n"
+                  "`//utb`: seach on youtube - eg: //utb pso2 3ktan\n"
         )
         await ctx.send(embed=embed)
 
