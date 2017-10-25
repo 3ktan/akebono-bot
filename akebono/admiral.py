@@ -60,6 +60,7 @@ class admiral:
     @commands.group(aliases=["out" ])
     @check.is_owner()
     async def logout(self, ctx):
+        self.session.close()
         print("Thanks for the hard work!")
         await ctx.send("Thanks for the hard work!")
         await self.bot.logout()

@@ -128,7 +128,9 @@ class Help_module:
         embed.add_field(
             name="Some stupid things",
             value="`//textflip`: Flipping some text, applies only to letters in alphabet (A-Z, a-z) and numbers (0-9)\n"
-                  "`//`: \n"
+                  "`//poke`: poke bot _(:3 \n"
+                  "`//countdown`: eg: //countdown 5 \n"
+                  "`//ping`: pong\n"
         )
         await ctx.send(embed=embed)
 
